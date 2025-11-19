@@ -1,73 +1,45 @@
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Skills from "./components/Skills";
+import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen w-full bg-[#070b12] text-slate-200 [--pad:clamp(16px,4vw,32px)]">
+      {/* Subtle grid/pattern background */}
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.08),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.06),transparent_20%),linear-gradient(to_bottom,rgba(255,255,255,0.04),rgba(255,255,255,0)_10%)]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      {/* Navbar */}
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#070b12]/70 backdrop-blur">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#" className="bg-gradient-to-r from-cyan-300 via-blue-300 to-fuchsia-300 bg-clip-text text-lg font-semibold text-transparent">AI Web Studio</a>
+          <div className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+            <a className="hover:text-white" href="#services">Services</a>
+            <a className="hover:text-white" href="#skills">Skills</a>
+            <a className="hover:text-white" href="#portfolio">Work</a>
+            <a className="hover:text-white" href="#contact">Contact</a>
           </div>
+          <a href="#contact" className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur transition-colors hover:bg-white/10">Start</a>
+        </nav>
+      </header>
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
+      <main className="relative">
+        <Hero />
+        <About />
+        <Services />
+        <Skills />
+        <Portfolio />
+        <Contact />
+      </main>
 
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Footer */}
+      <footer className="border-t border-white/10 bg-[#070b12] py-8 text-center text-sm text-slate-400">
+        © {new Date().getFullYear()} AI-Powered Web Development • Built for results
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
